@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_Adm.master.cs" Inherits="Admin_MasterPage_Adm" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Biografen</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../styles/minstyle.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+<!--Top menu-->
+        <header>
+            <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Dashboard</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <%--<a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>--%>
+                                <asp:LinkButton ID="LinkButton_BrugerNavn" class="dropdown-toggle" role="button" data-toggle="dropdown" runat="server">  </asp:LinkButton>
+                                             
+                                <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                                    <li><a href="#">My Profile</a></li>
+                                </ul>
+                            </li>
+                            <li><asp:LinkButton ID="LinkButton_LogUdTop" OnClick="LinkButton_Logud_Click" runat="server">
+                                 <i class="glyphicon glyphicon-log-out"></i>Logud</asp:LinkButton>
+                             </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /container -->
+            </div>
+        </header>
+<!--Top menu slut-->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+            <!-- Left column -->
+            <strong><i class="glyphicon glyphicon-wrench"></i> Menu</strong>
+
+            <hr>
+
+            <ul class="nav nav-stacked">
+                <li class="nav-header"><a href="#" class="linkmenu" data-toggle="collapse" data-target="#userMenu" >Settings <i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <ul class="nav nav-stacked collapse in" id="userMenu">
+                        <li class="active"> <a href="Default_Adm.aspx"><i class="glyphicon glyphicon-home"></i>Hjem</a></li>
+                        <li><a href="Brugere_Adm.aspx"><i class="glyphicon glyphicon-user"></i> Brugere</a></li>
+                        <li><a href="Film_Adm.aspx"><i class="glyphicon glyphicon-film"></i> Film</a></li>
+                        <li><a href="Genrer_Adm.aspx"><i class="glyphicon glyphicon-flag"></i> Genrer</a></li>
+                        <li><a href="../Default.aspx"><i class="glyphicon glyphicon-flag"></i> Frontend</a></li>
+                        <li><asp:LinkButton ID="LinkButton_Logud" OnClick="LinkButton_Logud_Click" runat="server">
+                            <i class="glyphicon glyphicon-off"></i>Logud</asp:LinkButton>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="nav-header">
+                    <a href="#" class="linkmenu" data-toggle="collapse" data-target="#menu3"> Social Media <i class="glyphicon glyphicon-chevron-right"></i></a>
+                    <ul class="nav nav-stacked collapse" id="menu3">
+                        <li><a href="#"><i class="glyphicon glyphicon-circle"></i> Facebook</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-circle"></i> Twitter</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /col-3 -->
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </main>
+    </form>
+    
+      <!--Scripts-->
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/scripts.js"></script>
+    
+    <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

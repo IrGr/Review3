@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="styles/minstyle.css" rel="stylesheet" />
+   
+
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrap">
+
+                <header>
+                    <asp:HyperLink ID="HyperLink_Logo" NavigateUrl="~/Default.aspx" runat="server">
+                         <asp:Image ID="Image_Logo" CssClass="center-block img-responsive" ImageUrl="images/ekstra_billeder/forslag_til_logo.gif" runat="server"></asp:Image>
+                    </asp:HyperLink>
+                </header><!--/header-->
+
+                <main>
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+      
+                    </asp:ContentPlaceHolder>
+                </main>
+
+                <footer> <%--class="footer"--%>
+                 <div class="container">
+                     <div class="row">
+                        <nav class="navbar-fixed-bottom">
+                           <ul id="nav" class="nav container" runat="server">
+                                <li class="col-md-1 col-sm-1 col-xs-3 text-center" runat="server">
+                                    <asp:HyperLink ID="HyperLink_Tilbud" NavigateUrl="Tilbud.aspx" runat="server">
+                                        <i class="fa fa-usd fa-2x"></i>Tilbud</asp:HyperLink>
+                                </li>
+                                <li class="col-md-1 col-sm-1 col-xs-3 text-center" runat="server">
+                                    <asp:HyperLink ID="HyperLink_Liste" NavigateUrl="Filmliste.aspx" runat="server">
+                                        <i class="fa fa-list fa-2x"></i>Liste</asp:HyperLink>
+                                </li>
+                                <li  class="col-md-1 col-sm-1 col-xs-3 text-center" id="id1" runat="server">
+                                    <asp:HyperLink ID="HyperLink_BrugerProfil"  Visible="false" NavigateUrl="BrugerProfil.aspx" runat="server">
+                                        <i class="fa fa-tasks fa-2x"></i>Profil</asp:HyperLink>
+
+                                </li>
+                                <li class="col-md-1 col-sm-1 col-xs-3 pull-right text-center" runat="server">
+                                    <asp:HyperLink ID="HyperLink_LogInUd" NavigateUrl="~/Login.aspx" runat="server">
+                                        <i class="fa fa-user fa-2x"></i>Login</asp:HyperLink>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                 </div><!--/.container-->
+                </footer>
+        </div><!--/.wrap-->
+       
+    </form>
+
+
+    <!--Scripts-->
+   <%-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    
+
+      <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+
+ 
+    
+</body>
+</html>
