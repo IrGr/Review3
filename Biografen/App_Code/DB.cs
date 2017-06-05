@@ -62,7 +62,7 @@ public class DB
                                             join billeder on film.film_id=billeder.fk_film_id
 											left join brugere on film.fk_genre_id=brugere.fk_genre_id and brugere.bruger_id = @id
 											ORDER BY isnull(brugere.bruger_id,0) DESC, rate_avg DESC ", conn);
-        cmd.Parameters.Add("@id",brugerid);
+        cmd.Parameters.AddWithValue("@id",brugerid);
         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
         DataTable dt = new DataTable();
